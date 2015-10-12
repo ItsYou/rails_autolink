@@ -369,6 +369,7 @@ class TestRailsAutolink < MiniTest::Unit::TestCase
     embed = video_url.gsub(VIDEO_REGEX, "https://www.youtube.com/embed/#{$1}")
     %{<iframe class="embedded_video" src="#{CGI::escapeHTML embed}"></iframe> #{CGI::escapeHTML text}}
   end
+  
   # from ruby core
   def build_message(head, template=nil, *arguments)
     template &&= template.chomp
