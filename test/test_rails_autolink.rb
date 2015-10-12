@@ -345,7 +345,12 @@ class TestRailsAutolink < MiniTest::Unit::TestCase
     end
   end
   
+  def test_auto_link_does_not_parse_aww
+    input = "aww..."
+    assert_equal generate_result(input), auto_link(input)
+  end
 
+  
   private
 
   def generate_result(link_text, href = nil, escape = false)
